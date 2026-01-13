@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pocket25 - Digital Voice Scanner for Android</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        p25dark: '#0f172a', // Matches blueGrey[900] vibe
+                        p25black: '#000000',
+                        p25cyan: '#06b6d4', // Matches Colors.cyan
+                        p25surface: '#1e293b',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-p25dark text-gray-200 font-sans antialiased overflow-x-hidden">
+
+    <!-- Navbar -->
+    <nav class="fixed w-full z-50 bg-p25dark/90 backdrop-blur-sm border-b border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center gap-2">
+                    <i class="fa-solid fa-walkie-talkie text-p25cyan text-2xl"></i>
+                    <span class="font-bold text-xl tracking-tight text-white">Pocket<span class="text-p25cyan">25</span></span>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="#features" class="hover:text-p25cyan px-3 py-2 rounded-md text-sm font-medium transition">Features</a>
+                        <a href="#gallery" class="hover:text-p25cyan px-3 py-2 rounded-md text-sm font-medium transition">Screenshots</a>
+                        <a href="https://sarahsforge.dev/products/pocket25" class="bg-p25cyan text-black hover:bg-cyan-300 px-4 py-2 rounded-md text-sm font-bold transition">
+                            <i class="fa-brands fa-android mr-2"></i>Download APK
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
+        <!-- Background decorative elements -->
+        <div class="absolute top-0 left-0 w-full h-full overflow-hidden -z-10">
+            <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-p25cyan/10 rounded-full blur-3xl"></div>
+            <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-blue-600/10 rounded-full blur-3xl"></div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight text-white mb-6">
+                Professional P25 Decoding <br class="hidden md:block" />
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-p25cyan to-blue-500">In Your Pocket</span>
+            </h1>
+            <p class="mt-4 max-w-2xl mx-auto text-xl text-gray-400">
+                Turn your Android device into a powerful digital trunking scanner. Native RTL-SDR support, GPS site hopping, and RadioReference integration built-in.
+            </p>
+            <div class="mt-10 flex justify-center gap-4">
+                <a href="https://github.com/SarahRoseLives/Pocket25" class="flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-black bg-p25cyan hover:bg-cyan-300 md:py-4 md:text-lg shadow-lg shadow-cyan-500/20 transition">
+                    <i class="fa-brands fa-github mr-2"></i> View Source
+                </a>
+                <a href="#features" class="flex items-center justify-center px-8 py-3 border border-gray-700 text-base font-medium rounded-md text-white hover:bg-gray-800 md:py-4 md:text-lg transition">
+                    Learn More
+                </a>
+            </div>
+
+            <p class="mt-4 text-sm text-gray-500">
+                <i class="fa-solid fa-check mr-1 text-green-500"></i> Based on DSD-Neo
+            </p>
+        </div>
+    </section>
+
+    <!-- App Gallery Section -->
+    <section id="gallery" class="py-16 bg-black relative">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-white">App Interface</h2>
+                <p class="text-gray-400 mt-2">A closer look at the scanning capabilities and settings.</p>
+            </div>
+
+            <!-- Gallery Container -->
+            <div class="relative w-full max-w-5xl mx-auto aspect-video md:h-[600px] rounded-2xl overflow-hidden shadow-2xl border border-gray-800 bg-gray-900 group">
+                <!-- Slides -->
+                <div id="gallery-track" class="w-full h-full relative">
+                    <!-- Image 1 -->
+                    <!-- REPLACE src="" with your own image URLs -->
+                    <div class="gallery-slide absolute inset-0 opacity-100 transition-opacity duration-700 ease-in-out">
+                        <img src="scanner.jpg" alt="Scanner Screen" class="w-full h-full object-contain bg-gray-900">
+                        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6 text-center">
+                            <h3 class="text-xl font-bold text-white">Live Scanner View</h3>
+                            <p class="text-gray-300 text-sm">Real-time call details and recent activity logs.</p>
+                        </div>
+                    </div>
+                    <!-- Image 2 -->
+                    <div class="gallery-slide absolute inset-0 opacity-0 transition-opacity duration-700 ease-in-out">
+                        <img src="log.jpg" alt="Log View" class="w-full h-full object-contain bg-gray-900">
+                        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6 text-center">
+                            <h3 class="text-xl font-bold text-white">Decode Logs</h3>
+                            <p class="text-gray-300 text-sm">Detailed P25 protocol frames and error correction data.</p>
+                        </div>
+                    </div>
+                    <!-- Image 3 -->
+                    <div class="gallery-slide absolute inset-0 opacity-0 transition-opacity duration-700 ease-in-out">
+                        <img src="site.jpg" alt="Site Details" class="w-full h-full object-contain bg-gray-900">
+                        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6 text-center">
+                            <h3 class="text-xl font-bold text-white">Site Information</h3>
+                            <p class="text-gray-300 text-sm">Detailed system metrics including WACN, System ID, and NAC.</p>
+                        </div>
+                    </div>
+                    <!-- Image 4 -->
+                    <div class="gallery-slide absolute inset-0 opacity-0 transition-opacity duration-700 ease-in-out">
+                        <img src="settings.jpg" alt="Settings" class="w-full h-full object-contain bg-gray-900">
+                        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6 text-center">
+                            <h3 class="text-xl font-bold text-white">Configuration</h3>
+                            <p class="text-gray-300 text-sm">Granular control over RTL-SDR gain, PPM, and audio settings.</p>
+                        </div>
+                    </div>
+                    <!-- Image 5 -->
+                    <div class="gallery-slide absolute inset-0 opacity-0 transition-opacity duration-700 ease-in-out">
+                        <img src="import.jpg" alt="Import" class="w-full h-full object-contain bg-gray-900">
+                        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6 text-center">
+                            <h3 class="text-xl font-bold text-white">RadioReference Import</h3>
+                            <p class="text-gray-300 text-sm">Directly download trunked systems and site data.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Controls -->
+                <button id="prev-btn" class="absolute left-4 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-p25cyan/80 text-white w-10 h-10 rounded-full backdrop-blur-sm transition opacity-0 group-hover:opacity-100 flex items-center justify-center z-10">
+                    <i class="fa-solid fa-chevron-left"></i>
+                </button>
+                <button id="next-btn" class="absolute right-4 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-p25cyan/80 text-white w-10 h-10 rounded-full backdrop-blur-sm transition opacity-0 group-hover:opacity-100 flex items-center justify-center z-10">
+                    <i class="fa-solid fa-chevron-right"></i>
+                </button>
+
+                <!-- Indicators -->
+                <div class="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-10">
+                    <button class="indicator w-2 h-2 rounded-full bg-white transition hover:bg-white" data-index="0"></button>
+                    <button class="indicator w-2 h-2 rounded-full bg-white/30 transition hover:bg-white" data-index="1"></button>
+                    <button class="indicator w-2 h-2 rounded-full bg-white/30 transition hover:bg-white" data-index="2"></button>
+                    <button class="indicator w-2 h-2 rounded-full bg-white/30 transition hover:bg-white" data-index="3"></button>
+                    <button class="indicator w-2 h-2 rounded-full bg-white/30 transition hover:bg-white" data-index="4"></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Grid -->
+    <section id="features" class="py-20 bg-p25surface">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-p25cyan font-semibold tracking-wide uppercase">Capabilities</h2>
+                <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-white sm:text-4xl">
+                    Built for Enthusiasts
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Feature 1 -->
+                <div class="bg-p25dark p-8 rounded-xl border border-gray-800 hover:border-p25cyan transition duration-300">
+                    <div class="w-12 h-12 bg-p25cyan/20 rounded-lg flex items-center justify-center mb-6">
+                        <i class="fa-brands fa-usb text-p25cyan text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Native RTL-SDR Support</h3>
+                    <p class="text-gray-400">
+                        No external driver apps required. Pocket25 communicates directly with your RTL-SDR dongle via USB OTG for low-latency performance.
+                    </p>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="bg-p25dark p-8 rounded-xl border border-gray-800 hover:border-p25cyan transition duration-300">
+                    <div class="w-12 h-12 bg-purple-500/20 rounded-lg flex items-center justify-center mb-6">
+                        <i class="fa-solid fa-cloud-arrow-down text-purple-400 text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">RadioReference Import</h3>
+                    <p class="text-gray-400">
+                        Log in to your RadioReference account and import local trunked systems, sites, and talkgroups directly into the internal database.
+                    </p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="bg-p25dark p-8 rounded-xl border border-gray-800 hover:border-p25cyan transition duration-300">
+                    <div class="w-12 h-12 bg-green-500/20 rounded-lg flex items-center justify-center mb-6">
+                        <i class="fa-solid fa-map-location-dot text-green-400 text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">GPS Site Hopping</h3>
+                    <p class="text-gray-400">
+                        Driving across the county? Pocket25 uses your GPS location to automatically switch to the nearest tower site in a trunked system.
+                    </p>
+                </div>
+
+                <!-- Feature 4 -->
+                <div class="bg-p25dark p-8 rounded-xl border border-gray-800 hover:border-p25cyan transition duration-300">
+                    <div class="w-12 h-12 bg-yellow-500/20 rounded-lg flex items-center justify-center mb-6">
+                        <i class="fa-solid fa-filter text-yellow-400 text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Smart Filtering</h3>
+                    <p class="text-gray-400">
+                        Easily toggle between Whitelist and Blacklist modes. Long-press any talkgroup in the recent list to instantly mute unwanted traffic.
+                    </p>
+                </div>
+
+                 <!-- Feature 5 -->
+                 <div class="bg-p25dark p-8 rounded-xl border border-gray-800 hover:border-p25cyan transition duration-300">
+                    <div class="w-12 h-12 bg-red-500/20 rounded-lg flex items-center justify-center mb-6">
+                        <i class="fa-solid fa-terminal text-red-400 text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Live DSD Logs</h3>
+                    <p class="text-gray-400">
+                        View the raw output from the embedded DSD decoder. Watch P25 sync bits, TSBK data, and error correction stats in real-time.
+                    </p>
+                </div>
+
+                 <!-- Feature 6 -->
+                 <div class="bg-p25dark p-8 rounded-xl border border-gray-800 hover:border-p25cyan transition duration-300">
+                    <div class="w-12 h-12 bg-blue-500/20 rounded-lg flex items-center justify-center mb-6">
+                        <i class="fa-solid fa-network-wired text-blue-400 text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Remote RTL-TCP</h3>
+                    <p class="text-gray-400">
+                        Don't have a dongle handy? Connect to a remote RTL-TCP server over WiFi and stream raw IQ data for processing.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tech Specs / Requirements -->
+    <section class="py-16 bg-p25dark border-t border-gray-800">
+        <div class="max-w-4xl mx-auto px-4">
+            <h2 class="text-2xl font-bold text-white mb-8 text-center">System Requirements</h2>
+            <div class="bg-gray-800/50 rounded-lg p-6">
+                <ul class="space-y-4">
+                    <li class="flex items-start">
+                        <i class="fa-brands fa-android text-p25cyan mt-1 mr-3"></i>
+                        <div>
+                            <span class="text-white font-bold block">Android Device</span>
+                            <span class="text-gray-400 text-sm">Requires USB Host (OTG) support. Optimized for landscape orientation.</span>
+                        </div>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-microchip text-p25cyan mt-1 mr-3"></i>
+                        <div>
+                            <span class="text-white font-bold block">Hardware</span>
+                            <span class="text-gray-400 text-sm">RTL-SDR V3 or compatible dongle + USB OTG Cable.</span>
+                        </div>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-wifi text-p25cyan mt-1 mr-3"></i>
+                        <div>
+                            <span class="text-white font-bold block">Network (Optional)</span>
+                            <span class="text-gray-400 text-sm">Required for RadioReference imports and Remote RTL-TCP connections.</span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black border-t border-gray-800 pt-12 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0">
+                    <span class="text-2xl font-bold text-white">Pocket<span class="text-p25cyan">25</span></span>
+                    <p class="text-gray-500 text-sm mt-2">Digital Voice Decoder for Android</p>
+                </div>
+
+            </div>
+            <div class="mt-8 border-t border-gray-800 pt-8 text-center md:text-left">
+                <p class="text-gray-500 text-sm">
+                    Sarah Rose. Licensed under GNU GPLv3.
+                    <br>
+                    Includes DSD-Neo technology.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Slider JS -->
+    <script>
+        const slides = document.querySelectorAll('.gallery-slide');
+        const indicators = document.querySelectorAll('.indicator');
+        let currentSlide = 0;
+        const totalSlides = slides.length;
+        let slideInterval;
+
+        function showSlide(index) {
+            slides.forEach(slide => slide.classList.remove('opacity-100'));
+            slides.forEach(slide => slide.classList.add('opacity-0'));
+
+            indicators.forEach(ind => {
+                ind.classList.remove('bg-white', 'scale-125');
+                ind.classList.add('bg-white/30');
+            });
+
+            slides[index].classList.remove('opacity-0');
+            slides[index].classList.add('opacity-100');
+
+            indicators[index].classList.remove('bg-white/30');
+            indicators[index].classList.add('bg-white', 'scale-125');
+
+            currentSlide = index;
+        }
+
+        function nextSlide() {
+            let next = (currentSlide + 1) % totalSlides;
+            showSlide(next);
+        }
+
+        function prevSlide() {
+            let prev = (currentSlide - 1 + totalSlides) % totalSlides;
+            showSlide(prev);
+        }
+
+        function startTimer() {
+             clearInterval(slideInterval);
+             slideInterval = setInterval(nextSlide, 5000); // 5 seconds
+        }
+
+        // Event Listeners
+        document.getElementById('next-btn').addEventListener('click', () => {
+            nextSlide();
+            startTimer();
+        });
+
+        document.getElementById('prev-btn').addEventListener('click', () => {
+            prevSlide();
+            startTimer();
+        });
+
+        indicators.forEach((ind, i) => {
+            ind.addEventListener('click', () => {
+                showSlide(i);
+                startTimer();
+            });
+        });
+
+        // Init
+        showSlide(0);
+        startTimer();
+    </script>
+
+</body>
+</html>
