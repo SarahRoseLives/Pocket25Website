@@ -1,7 +1,7 @@
 {
-  "version": "1.0.0+9",
+  "version": "1.0.0+10",
   "releaseDate": "2026-01-22",
   "changelog": [
-    "Extensive UI changes to the scanner interface"
+    "Added update checking"
   ]
 }
